@@ -3,7 +3,6 @@
 }
 
 .container {
-  padding-top: 160px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -56,6 +55,11 @@ button {
   cursor: pointer;
   height: 100%;
 }
+
+button:disabled{
+  background-color:gray;
+  cursor:default;
+}
 .done-button {
   background-color: #242424;
   color: #ffffff;
@@ -76,7 +80,6 @@ tr {
   /* padding: 20px; */
   height: 50px;
   text-align: left;
-
   flex-wrap: nowrap;
   display: flex;
   justify-content: space-between;
@@ -98,4 +101,11 @@ td{
 
 .is-done{
   text-decoration: line-through;
+}
+
+p{
+  line-height: 50px
+}
+.validation-error{
+  color:red;
 }
