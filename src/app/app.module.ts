@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TaskListComponent} from "./task-list/task-list.component";
-import { TaskListModule } from './task-list/task-list.module';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarModule } from './calendar/calendar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TasksModule } from './tasks/tasks.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TaskListModule,
+    TasksModule,
     CalendarModule
   ],
   providers: [],
