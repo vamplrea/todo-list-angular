@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {NgForm} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
+import { Observable } from "rxjs";
 import { NewTask } from "./new-task.dto";
 import {TaskItem} from "./task-item.dto";
 import { TasksService } from "./tasks.service";
@@ -14,7 +15,7 @@ import { TasksService } from "./tasks.service";
 export class TaskListComponent implements OnInit{
 
   newTask: NewTask = new NewTask() ;
-  tasks: TaskItem[] =this.taskService.getAllTasks();
+  tasks: Observable<TaskItem[]> =this.taskService.getAllTasks();
   constructor( private route: ActivatedRoute,private taskService:TasksService){
   }
   ngOnInit(): void {
