@@ -15,7 +15,8 @@ import { TasksService } from "./tasks.service";
 export class TaskListComponent implements OnInit{
 
   newTask: NewTask = new NewTask() ;
-  tasks: Observable<TaskItem[]> =this.taskService.getAllTasks();
+  tasks: Observable<TaskItem[]> =this.taskService.getAllTasks(this.route.snapshot.params['date']);
+
   constructor( private route: ActivatedRoute,private taskService:TasksService){
   }
   ngOnInit(): void {
@@ -28,7 +29,7 @@ export class TaskListComponent implements OnInit{
     if(taskNgForm.touched ==false){
       return;
     }
-    this.taskService.addTask(this.newTask);
+    this.taskService.addTask(this.newTask.date,this.newTask);
     taskNgForm.reset({date:this.newTask.date});
 
   }
@@ -38,7 +39,7 @@ export class TaskListComponent implements OnInit{
       `Do you want to delete the following task ? \n${existingTask.title}`
     );
     if (userConfirm) {
-      this.taskService.removeTask(existingTask);
+      this.taskService.removeTask(this.newTask.date,existingTask);
     }
   }
 

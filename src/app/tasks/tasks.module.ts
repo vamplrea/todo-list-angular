@@ -4,6 +4,7 @@ import { TaskListComponent } from './task-list.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { TasksService } from "./tasks.service";
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TasksService } from "./tasks.service";
   imports: [
     CommonModule,
     MatDatepickerModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers:[TasksService],
   exports:[
